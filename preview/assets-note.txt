@@ -1,0 +1,1 @@
+La fase 1 usa recursos visuales rasterizados para flores y sobre. CSS queda reservado para layout y animación.
