@@ -3,21 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#FDFBF7">
-<meta name="description" content="Invitación digital de boda de Sofía y Alejandro — 12 de diciembre de 2026 en Ciudad de México.">
-<title>Sofía & Alejandro | 12.12.2026</title>
+<meta name="theme-color" content="#44513A">
+<meta name="description" content="Invitación de boda de Lizbeth Esparza Carrillo y Salvador Ortiz Lopez · 24 de abril de 2027 · Zacatecas">
+<title>Lizbeth & Salvador | 24.04.2027</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <script src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config={theme:{extend:{colors:{cream:'#FDFBF7',sage:'#8A9A86',gold:'#D4AF37',anthracite:'#2C3E50'},fontFamily:{serif:['Cormorant Garamond','serif'],sans:['Montserrat','sans-serif']},boxShadow:{soft:'0 22px 60px rgba(44,62,80,.10)'}}}}}</script>
-<link rel="stylesheet" href="custom.css?v=4">
+<script>tailwind.config={theme:{extend:{colors:{cream:'#F7F2E8',paper:'#FFFDF8',sage:'#566348',oliveDark:'#44513A',gold:'#B89A67',rose:'#D9ADA9',lav:'#CFC5D5',anthracite:'#2F342B'},fontFamily:{serif:['Cormorant Garamond','serif'],sans:['Montserrat','sans-serif']},boxShadow:{soft:'0 22px 60px rgba(38,47,32,.12)'}}}}}</script>
+<link rel="stylesheet" href="custom.css?v=6">
 </head>
 <body class="font-sans antialiased">
 <div id="page"></div>
 <script>
-Promise.all(['section1.html?v=3','section2.html?v=3','section3.html?v=3'].map(url=>fetch(url).then(r=>{if(!r.ok)throw new Error(url);return r.text()}))).then(parts=>{document.getElementById('page').innerHTML=parts.join('');const s=document.createElement('script');s.src='app.js?v=4';document.body.appendChild(s)}).catch(()=>{document.getElementById('page').innerHTML='<main style="min-height:100vh;display:grid;place-items:center;padding:24px;font-family:Montserrat,sans-serif;color:#2C3E50;background:#FDFBF7"><p>No fue posible cargar la invitación. Actualiza la página.</p></main>'});
+Promise.all(['section1.html?v=6','section2.html?v=6','section3.html?v=6'].map(url=>fetch(url).then(r=>{if(!r.ok)throw new Error(url);return r.text()}))).then(parts=>{document.getElementById('page').innerHTML=parts.join('');const s=document.createElement('script');s.src='app.js?v=6';document.body.appendChild(s)}).catch(()=>{document.getElementById('page').innerHTML='<main style="min-height:100vh;display:grid;place-items:center;padding:24px;font-family:Montserrat,sans-serif;background:#F7F2E8;color:#2F342B"><p>No fue posible cargar la invitación. Actualiza la página.</p></main>'});
 </script>
 </body>
 </html>
