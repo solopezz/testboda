@@ -3,13 +3,94 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#172a42">
+<meta name="theme-color" content="#1a3451">
 <title>Fase 1 · Pantalla inicial</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Parisienne&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Parisienne&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#172a42;--navy2:#203651;--text:#f6f2ec;--copper:#d98b56}*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#0e1723}body{font-family:Montserrat,Arial,sans-serif;overflow:hidden}.stage{min-height:100svh;display:grid;place-items:center;background:#101822}.invite{position:relative;width:min(100vw,430px);height:100svh;min-height:640px;overflow:hidden;background:linear-gradient(180deg,#1b304a 0%,#15273f 100%);color:var(--text);box-shadow:0 0 70px #0008;transition:opacity .55s ease,transform .55s ease}.invite:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.012) 0 1px,transparent 1px 4px);mix-blend-mode:soft-light;opacity:.55}.flap-top,.flap-left,.flap-right,.flap-bottom{position:absolute;inset:0;pointer-events:none}.flap-top{background:linear-gradient(155deg,rgba(255,255,255,.025),rgba(0,0,0,.08));clip-path:polygon(0 0,100% 0,50% 45%)}.flap-left{background:linear-gradient(135deg,rgba(255,255,255,.025),rgba(0,0,0,.08));clip-path:polygon(0 0,50% 45%,0 100%)}.flap-right{background:linear-gradient(225deg,rgba(255,255,255,.025),rgba(0,0,0,.08));clip-path:polygon(100% 0,50% 45%,100% 100%)}.flap-bottom{background:linear-gradient(180deg,rgba(255,255,255,.015),rgba(0,0,0,.12));clip-path:polygon(0 100%,50% 45%,100% 100%)}.content{position:relative;z-index:3;height:100%;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 32px}.copy{margin-top:23.5svh}.family{font:600 16px/1.2 'Cormorant Garamond',serif;letter-spacing:.01em}.names{margin-top:11px;font:400 31px/1 'Parisienne',cursive}.message{margin-top:14px;max-width:230px;font:400 15px/1.35 'Cormorant Garamond',serif}.seal{width:108px;height:108px;margin-top:31px;object-fit:contain;filter:drop-shadow(0 10px 10px rgba(0,0,0,.36))}.open{position:absolute;left:50%;bottom:max(58px,9svh);transform:translateX(-50%);width:194px;height:45px;border:1px solid rgba(255,255,255,.9);border-radius:999px;background:transparent;color:white;font:500 11px/1 Montserrat,sans-serif;letter-spacing:.04em;text-transform:uppercase}.open:active{transform:translateX(-50%) scale(.98)}.invite.leaving{opacity:0;transform:scale(1.015)}.next{position:absolute;inset:0;display:grid;place-items:center;background:#fff;color:#8b8b8b;text-align:center;padding:30px;font:500 11px Montserrat,sans-serif;letter-spacing:.18em;text-transform:uppercase;opacity:0;transition:opacity .3s ease}.next.show{opacity:1}@media(max-width:390px){.copy{margin-top:21svh}.seal{width:100px;height:100px}.open{bottom:7.5svh}}
+:root{--navy:#1b3653;--navy-deep:#142a43;--paper-light:#264560;--text:#faf7f1}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#0e1723}
+body{font-family:Montserrat,Arial,sans-serif;overflow:hidden}
+.stage{min-height:100svh;display:grid;place-items:center;background:#101822}
+.invite{
+  position:relative;width:min(100vw,430px);height:100svh;min-height:640px;overflow:hidden;color:var(--text);
+  background-color:var(--navy);
+  background-image:
+    radial-gradient(circle at 18% 16%,rgba(255,255,255,.055),transparent 28%),
+    radial-gradient(circle at 76% 34%,rgba(255,255,255,.022),transparent 32%),
+    linear-gradient(180deg,#23425f 0%,#1a3552 47%,#17304b 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.21'/%3E%3C/svg%3E");
+  background-blend-mode:soft-light,soft-light,normal,soft-light;
+  box-shadow:0 0 70px #0008;
+  transition:opacity .55s ease,transform .55s ease
+}
+.invite:before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:repeating-linear-gradient(88deg,rgba(255,255,255,.014) 0 1px,transparent 1px 5px);
+  opacity:.8;mix-blend-mode:soft-light
+}
+.flap-top,.flap-left,.flap-right,.flap-bottom{position:absolute;inset:0;pointer-events:none;z-index:1}
+.flap-top{
+  clip-path:polygon(0 0,100% 0,100% 42%,50% 59%,0 42%);
+  background:
+    linear-gradient(160deg,rgba(255,255,255,.065),rgba(255,255,255,.01) 46%,rgba(0,0,0,.10) 100%),
+    linear-gradient(180deg,#244560,#1c3855);
+  filter:drop-shadow(0 12px 12px rgba(5,15,27,.24));
+  opacity:.74
+}
+.flap-left{
+  clip-path:polygon(0 42%,50% 59%,0 100%);
+  background:linear-gradient(135deg,rgba(255,255,255,.045),rgba(20,42,67,.44));
+  filter:drop-shadow(8px -4px 10px rgba(4,13,23,.13));
+  opacity:.82
+}
+.flap-right{
+  clip-path:polygon(100% 42%,50% 59%,100% 100%);
+  background:linear-gradient(225deg,rgba(255,255,255,.035),rgba(18,38,61,.48));
+  filter:drop-shadow(-8px -4px 10px rgba(4,13,23,.13));
+  opacity:.82
+}
+.flap-bottom{
+  clip-path:polygon(0 100%,50% 59%,100% 100%);
+  background:linear-gradient(180deg,rgba(35,66,96,.23),rgba(10,26,44,.24));
+  filter:drop-shadow(0 -8px 12px rgba(4,13,23,.12));
+  opacity:.66
+}
+.content{position:relative;z-index:3;height:100%;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 28px}
+.copy{margin-top:29svh;width:100%}
+.family{font:700 18px/1.2 'Cormorant Garamond',serif;letter-spacing:.01em;text-shadow:0 1px 1px rgba(0,0,0,.16)}
+.names{margin-top:15px;font:400 37px/1 'Parisienne',cursive;text-shadow:0 1px 1px rgba(0,0,0,.16)}
+.message{margin:17px auto 0;max-width:360px;font:500 16px/1.32 'Cormorant Garamond',serif;white-space:nowrap;text-shadow:0 1px 1px rgba(0,0,0,.15)}
+.seal{
+  width:112px;height:112px;margin-top:66px;object-fit:contain;
+  filter:drop-shadow(0 11px 10px rgba(0,0,0,.38));
+  transform-origin:50% 50%;
+  animation:sealPulse 1.85s cubic-bezier(.45,0,.55,1) infinite
+}
+@keyframes sealPulse{0%,100%{transform:scale(.96)}50%{transform:scale(1.075)}}
+.open{
+  position:absolute;left:50%;bottom:17svh;transform:translateX(-50%);
+  width:min(55vw,238px);height:58px;border:1.5px solid rgba(255,255,255,.94);border-radius:999px;
+  background:rgba(16,34,54,.03);color:white;
+  font:500 12px/1 'Cormorant Garamond',serif;letter-spacing:.04em;text-transform:uppercase;
+  backdrop-filter:blur(1px)
+}
+.open:active{transform:translateX(-50%) scale(.985)}
+.invite.leaving{opacity:0;transform:scale(1.012)}
+.next{position:absolute;inset:0;display:grid;place-items:center;background:#fff;color:#8b8b8b;text-align:center;padding:30px;font:500 11px Montserrat,sans-serif;letter-spacing:.18em;text-transform:uppercase;opacity:0;transition:opacity .3s ease}
+.next.show{opacity:1}
+@media(max-width:390px){
+  .copy{margin-top:27.5svh}
+  .family{font-size:17px}.names{font-size:35px}.message{font-size:15px;max-width:330px}
+  .seal{width:106px;height:106px;margin-top:57px}
+  .open{bottom:15.5svh;height:55px}
+}
+@media(max-height:720px){
+  .copy{margin-top:24svh}.seal{margin-top:40px}.open{bottom:11svh}
+}
+@media(prefers-reduced-motion:reduce){.seal{animation:none}}
 </style>
 </head>
 <body>
@@ -29,7 +110,12 @@
   </main>
 </div>
 <script>
-const invite=document.getElementById('invite');const next=document.getElementById('next');document.getElementById('open').addEventListener('click',()=>{invite.classList.add('leaving');setTimeout(()=>{invite.style.display='none';next.classList.add('show')},520)});
+const invite=document.getElementById('invite');
+const next=document.getElementById('next');
+document.getElementById('open').addEventListener('click',()=>{
+  invite.classList.add('leaving');
+  setTimeout(()=>{invite.style.display='none';next.classList.add('show')},520);
+});
 </script>
 </body>
 </html>
