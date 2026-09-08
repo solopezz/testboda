@@ -30,9 +30,13 @@ body{font-family:Montserrat,Arial,sans-serif;overflow:hidden;color:var(--ink)}
   transition:opacity .42s ease,filter .42s ease;
 }
 .card:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.12;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='170' height='170'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E")}
-.flowers{position:absolute;z-index:1;width:245px;pointer-events:none;user-select:none;filter:drop-shadow(0 5px 10px rgba(72,81,64,.10));opacity:.96}
-.flowers.top{top:-48px;left:-82px;transform:rotate(18deg)}
-.flowers.bottom{right:-78px;bottom:-72px;transform:rotate(198deg)}
+.flowers{
+  position:absolute;z-index:1;width:255px;pointer-events:none;user-select:none;
+  mix-blend-mode:multiply;opacity:.93;
+  filter:saturate(.88) contrast(.94) drop-shadow(0 5px 10px rgba(72,81,64,.07));
+}
+.flowers.top{top:-7px;left:-8px;transform:none}
+.flowers.bottom{right:-14px;bottom:-22px;transform:rotate(180deg) scale(.96)}
 .content{position:relative;z-index:3;height:100%;display:flex;flex-direction:column;align-items:center;padding:0 22px}
 .heading{margin-top:15svh}
 .kicker{font:600 16px/1.2 'Cormorant Garamond',serif;letter-spacing:.15em;text-transform:uppercase}
@@ -48,21 +52,31 @@ body{font-family:Montserrat,Arial,sans-serif;overflow:hidden;color:var(--ink)}
 .front{clip-path:polygon(0 100%,0 68%,50% 43%,100% 68%,100% 100%);filter:saturate(.50) brightness(.75) hue-rotate(10deg);box-shadow:0 -8px 12px rgba(25,31,24,.16)}
 .flap{z-index:4;clip-path:polygon(0 0,100% 0,50% 58%);transform-origin:50% 0%;filter:saturate(.50) brightness(.84) hue-rotate(10deg);box-shadow:0 13px 16px rgba(19,26,18,.24);transition:transform .48s cubic-bezier(.22,.72,.12,1),filter .35s ease}
 .envelope:after{content:"";position:absolute;inset:0;border-radius:2px;pointer-events:none;box-shadow:0 18px 24px rgba(42,49,38,.24)}
-.seal-wrap{position:absolute;left:50%;top:53%;z-index:9;width:92px;height:80px;transform:translate(-50%,-50%);animation:pulse 1.75s ease-in-out infinite;transition:opacity .24s ease,transform .28s ease,filter .28s ease}
-.seal-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:grayscale(1) sepia(1) saturate(2.4) hue-rotate(352deg) brightness(1.18) contrast(1.03) drop-shadow(0 8px 7px rgba(66,48,20,.28))}
-.seal-text{position:absolute;inset:0;display:grid;place-items:center;padding-top:2px;color:#6a4d20;font:600 22px/1 'Parisienne',cursive;text-shadow:0 1px rgba(255,238,178,.45)}
+.seal-wrap{
+  position:absolute;left:50%;top:53%;z-index:9;width:86px;height:86px;
+  transform:translate(-50%,-50%);animation:pulse 1.75s ease-in-out infinite;
+  transition:opacity .24s ease,transform .28s ease,filter .28s ease;
+  border-radius:50%;overflow:hidden;background:transparent;
+  filter:drop-shadow(0 8px 7px rgba(66,48,20,.28));
+}
+.seal-img{
+  position:absolute;width:124%;height:124%;left:-12%;top:-12%;object-fit:cover;
+  clip-path:circle(43% at 50% 50%);
+  filter:grayscale(1) sepia(1) saturate(2.4) hue-rotate(352deg) brightness(1.18) contrast(1.03);
+}
+.seal-text{position:absolute;inset:0;z-index:2;display:grid;place-items:center;padding-top:1px;color:#6a4d20;font:600 22px/1 'Parisienne',cursive;text-shadow:0 1px rgba(255,238,178,.45)}
 @keyframes pulse{0%,100%{transform:translate(-50%,-50%) scale(.96)}50%{transform:translate(-50%,-50%) scale(1.08)}}
 .click-copy{margin-top:22px;font:600 11px/1.4 'Cormorant Garamond',serif;letter-spacing:.17em;text-transform:uppercase}
 .passes{margin-top:25px;font:600 11px/1.25 'Cormorant Garamond',serif;letter-spacing:.12em;text-transform:uppercase}
 .pass-number{width:59px;height:59px;margin:11px auto 8px;border:1.5px solid #92978c;border-radius:14px;background:rgba(255,255,255,.50);display:grid;place-items:center;font:600 40px/1 'Cormorant Garamond',serif;box-shadow:0 3px 8px rgba(62,67,57,.06)}
 .pass-sub{font-size:10px;letter-spacing:.14em}
-.opening .seal-wrap{animation:none;transform:translate(-50%,-50%) scale(1.38) rotate(6deg);opacity:0;filter:blur(1px)}
+.opening .seal-wrap{animation:none;transform:translate(-50%,-50%) scale(1.38) rotate(6deg);opacity:0;filter:blur(1px) drop-shadow(0 8px 7px rgba(66,48,20,.20))}
 .opening .flap{transform:rotateX(-158deg);filter:saturate(.48) brightness(.92) hue-rotate(10deg)}
 .zoom .envelope{transform:translateY(3vh) scale(7.8);filter:brightness(.70) blur(.35px)}
 .zoom .click-copy,.zoom .passes,.zoom .heading,.zoom .flowers{opacity:0;transition:opacity .22s ease}
 .card.fade{opacity:0;filter:blur(2px)}
 .next{position:absolute;inset:0;display:grid;place-items:center;background:#f5f2eb;color:#7b8174;font:600 11px Montserrat,sans-serif;letter-spacing:.18em;text-transform:uppercase;opacity:0;transition:opacity .3s ease;z-index:0}.next.show{opacity:1;z-index:20}
-@media(max-width:390px){.heading{margin-top:13.5svh}.envelope-wrap{width:min(81vw,305px);height:188px}.flowers{width:225px}.seal-wrap{width:88px}.click-copy{margin-top:18px}.passes{margin-top:20px}}
+@media(max-width:390px){.heading{margin-top:13.5svh}.envelope-wrap{width:min(81vw,305px);height:188px}.flowers{width:235px}.seal-wrap{width:82px;height:82px}.click-copy{margin-top:18px}.passes{margin-top:20px}}
 @media(max-height:730px){.heading{margin-top:8svh}.names{font-size:43px}.date{margin-top:14px}.envelope-wrap{margin-top:20px;height:174px}.click-copy{margin-top:12px}.passes{margin-top:13px}.pass-number{width:51px;height:51px;font-size:34px}}
 @media(prefers-reduced-motion:reduce){.seal-wrap{animation:none}.envelope,.flap{transition:none}}
 </style>
@@ -71,8 +85,8 @@ body{font-family:Montserrat,Arial,sans-serif;overflow:hidden;color:var(--ink)}
 <div class="stage">
   <div id="next" class="next">Página de inicio · próxima fase</div>
   <main id="card" class="card">
-    <img class="flowers top" src="https://pngimg.com/uploads/white_roses/white_roses_PNG2800.png" alt="" aria-hidden="true">
-    <img class="flowers bottom" src="https://pngimg.com/uploads/white_roses/white_roses_PNG2800.png" alt="" aria-hidden="true">
+    <img class="flowers top" src="assets/flowers-reference.jpg" alt="" aria-hidden="true">
+    <img class="flowers bottom" src="assets/flowers-reference.jpg" alt="" aria-hidden="true">
     <div class="content">
       <header class="heading">
         <div class="kicker">Nuestra boda</div>
