@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 560" role="img" aria-label="Sobre de boda con follaje botánico">
+<defs>
+ <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fffdf7"/><stop offset="1" stop-color="#ede4d3"/></linearGradient>
+ <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e4d5ad"/><stop offset=".5" stop-color="#b99559"/><stop offset="1" stop-color="#dfc895"/></linearGradient>
+ <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d9e1d0"/><stop offset=".45" stop-color="#82977e"/><stop offset="1" stop-color="#3f5c50"/></linearGradient>
+ <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#24352f" flood-opacity=".18"/></filter>
+ <filter id="grain" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="8" result="n"/><feBlend in="SourceGraphic" in2="n" mode="soft-light"/></filter>
+ <path id="l" d="M0 0C16-17 44-16 58 0C42 18 17 19 0 0Z"/>
+</defs>
+<g filter="url(#shadow)">
+ <path d="M125 185L380 45L635 185V470H125Z" fill="url(#paper)" stroke="url(#edge)" stroke-width="4"/>
+ <path d="M125 185L380 365L635 185" fill="#f4ecdd" stroke="url(#edge)" stroke-width="3.5"/>
+ <path d="M125 470L303 311M635 470L457 311" fill="none" stroke="url(#edge)" stroke-width="3.5"/>
+ <path d="M215 159L380 275L545 159V91H215Z" fill="#faf5e9" stroke="url(#edge)" stroke-width="3" filter="url(#grain)"/>
+ <rect x="252" y="105" width="256" height="134" rx="7" fill="url(#paper)" stroke="#d5c18d" stroke-width="2.5"/>
+ <path d="M380 145C402 111 452 124 452 161C452 195 418 212 380 247C342 212 308 195 308 161C308 124 358 111 380 145Z" fill="#8ca084" opacity=".88"/>
+</g>
+<g fill="url(#leaf)" opacity=".95">
+ <path d="M77 395C136 343 170 295 196 235" fill="none" stroke="#6d806f" stroke-width="6" stroke-linecap="round"/>
+ <use href="#l" transform="translate(93 369) rotate(-54) scale(.82)"/><use href="#l" transform="translate(121 329) rotate(-40) scale(.76)"/><use href="#l" transform="translate(144 291) rotate(-28) scale(.86)"/><use href="#l" transform="translate(165 250) rotate(-18) scale(.72)"/><use href="#l" transform="translate(107 351) rotate(122) scale(.55)"/><use href="#l" transform="translate(143 307) rotate(137) scale(.58)"/>
+ <path d="M683 395C624 343 590 295 564 235" fill="none" stroke="#6d806f" stroke-width="6" stroke-linecap="round"/>
+ <use href="#l" transform="translate(667 369) rotate(234) scale(.82)"/><use href="#l" transform="translate(639 329) rotate(220) scale(.76)"/><use href="#l" transform="translate(616 291) rotate(208) scale(.86)"/><use href="#l" transform="translate(595 250) rotate(198) scale(.72)"/><use href="#l" transform="translate(653 351) rotate(58) scale(.55)"/><use href="#l" transform="translate(617 307) rotate(43) scale(.58)"/>
+</g>
+<g fill="#f7f3e6" stroke="#c9bea0" stroke-width="1.3"><circle cx="142" cy="280" r="11"/><circle cx="159" cy="267" r="8"/><circle cx="617" cy="280" r="11"/><circle cx="600" cy="267" r="8"/></g>
+</svg>
