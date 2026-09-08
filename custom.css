@@ -29,6 +29,6 @@ section.bg-white,section.bg-cream,section[class*="bg-[#f"],article.bg-white,.gla
 /* Corazones cayendo */
 #falling-hearts{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:40;isolation:isolate}
 .falling-heart{position:absolute;top:-12vh;display:block;line-height:1;opacity:.32;filter:drop-shadow(0 2px 5px rgba(70,50,50,.08));animation:heartFall linear infinite;will-change:transform}
-@keyframes heartFall{0%{transform:translate3d(0,-12vh,0) rotate(0deg)}50%{transform:translate3d(var(--drift),50vh,0) rotate(150deg)}100%{transform:translate3d(calc(var(--drift) * -.35),112vh,0) rotate(320deg)}}
+@keyframes heartFall{0%{transform:translate3d(0,-12vh,0) rotate(0deg)}50%{transform:translate3d(var(--drift),50vh,0) rotate(150deg)}100%{transform:translate3d(var(--drift-end),112vh,0) rotate(320deg)}}
 @media (max-width:640px){.falling-heart{opacity:.25}}
 @media (prefers-reduced-motion:reduce){.falling-heart{display:none}.reveal{opacity:1;transform:none;transition:none}}
