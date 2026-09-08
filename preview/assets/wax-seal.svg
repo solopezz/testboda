@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" role="img" aria-label="Sello L y S">
+<defs><radialGradient id="wax" cx="38%" cy="32%" r="72%"><stop offset="0" stop-color="#d6b467"/><stop offset=".48" stop-color="#b58a3e"/><stop offset="1" stop-color="#7f5b26"/></radialGradient><filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#2d2418" flood-opacity=".28"/></filter></defs>
+<path filter="url(#shadow)" fill="url(#wax)" d="M130 12c19 0 30 12 44 17 15 6 34 2 46 14 12 12 8 31 14 46 5 14 17 25 17 44s-12 30-17 44c-6 15-2 34-14 46-12 12-31 8-46 14-14 5-25 17-44 17s-30-12-44-17c-15-6-34-2-46-14-12-12-8-31-14-46-5-14-17-25-17-44s12-30 17-44c6-15 2-34 14-46 12-12 31-8 46-14 14-5 25-17 44-17z"/>
+<circle cx="130" cy="130" r="82" fill="none" stroke="#ead596" stroke-opacity=".72" stroke-width="3"/><circle cx="130" cy="130" r="67" fill="none" stroke="#76511f" stroke-opacity=".35" stroke-width="2"/>
+<text x="130" y="144" text-anchor="middle" font-family="Georgia,serif" font-size="48" font-style="italic" fill="#5e421d">L&amp;S</text>
+<path d="M87 167c26 13 60 13 86 0" fill="none" stroke="#ead596" stroke-opacity=".6" stroke-width="2" stroke-linecap="round"/>
+</svg>
