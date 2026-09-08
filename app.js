@@ -1,93 +1,65 @@
-const body = document.body;
-const intro = document.getElementById('intro');
-const openInvite = document.getElementById('openInvite');
-const song = document.getElementById('song');
-const musicBtn = document.getElementById('musicBtn');
-const inlinePlay = document.getElementById('inlinePlay');
-const calendarBtn = document.getElementById('calendarBtn');
-const form = document.getElementById('rsvpForm');
-const success = document.getElementById('rsvpSuccess');
-let playing = false;
+const body=document.body;
+const intro=document.getElementById('intro');
+const enterBtn=document.getElementById('enterBtn');
+const song=document.getElementById('song');
+const musicBtn=document.getElementById('musicBtn');
+const musicState=document.getElementById('musicState');
+const musicIcon=document.getElementById('musicIcon');
+const progress=document.getElementById('progress');
+let playing=false;
 
-function updateMusicButtons(){
-  const label = playing ? '❚❚' : '▶';
-  musicBtn.textContent = label;
-  inlinePlay.textContent = label;
+function renderMusic(){
+  musicBtn.classList.toggle('playing',playing);
+  musicState.textContent=playing?'Pausar':'Reproducir';
+  musicIcon.textContent=playing?'Ⅱ':'♪';
 }
-
-function setMusic(on){
-  playing = on;
+async function setMusic(on){
   if(on){
-    song.play().catch(()=>{ playing = false; updateMusicButtons(); });
-  }else{
-    song.pause();
-  }
-  updateMusicButtons();
+    try{await song.play();playing=true;}catch(e){playing=false;}
+  }else{song.pause();playing=false;}
+  renderMusic();
 }
-
-openInvite.addEventListener('click', ()=>{
-  intro.classList.add('opening');
+enterBtn.addEventListener('click',()=>{
   setMusic(true);
-  setTimeout(()=>{
-    intro.classList.add('hidden');
-    body.classList.remove('locked');
-  }, 900);
+  intro.classList.add('is-hidden');
+  body.classList.remove('is-locked');
 });
+musicBtn.addEventListener('click',()=>setMusic(!playing));
 
-musicBtn.addEventListener('click', ()=>setMusic(!playing));
-inlinePlay.addEventListener('click', ()=>setMusic(!playing));
-
-const target = new Date('2027-04-18T17:00:00-06:00').getTime();
-function updateCountdown(){
-  let diff = Math.max(0, target - Date.now());
-  const days = Math.floor(diff / 86400000); diff %= 86400000;
-  const hours = Math.floor(diff / 3600000); diff %= 3600000;
-  const minutes = Math.floor(diff / 60000); diff %= 60000;
-  const seconds = Math.floor(diff / 1000);
-  document.getElementById('days').textContent = String(days).padStart(3,'0');
-  document.getElementById('hours').textContent = String(hours).padStart(2,'0');
-  document.getElementById('minutes').textContent = String(minutes).padStart(2,'0');
-  document.getElementById('seconds').textContent = String(seconds).padStart(2,'0');
+const target=new Date('2027-04-18T17:00:00-06:00').getTime();
+function tick(){
+  let diff=Math.max(0,target-Date.now());
+  const d=Math.floor(diff/86400000); diff%=86400000;
+  const h=Math.floor(diff/3600000); diff%=3600000;
+  const m=Math.floor(diff/60000); diff%=60000;
+  const s=Math.floor(diff/1000);
+  document.getElementById('days').textContent=String(d).padStart(3,'0');
+  document.getElementById('hours').textContent=String(h).padStart(2,'0');
+  document.getElementById('minutes').textContent=String(m).padStart(2,'0');
+  document.getElementById('seconds').textContent=String(s).padStart(2,'0');
 }
-updateCountdown();
-setInterval(updateCountdown, 1000);
+tick();setInterval(tick,1000);
 
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{ if(entry.isIntersecting) entry.target.classList.add('in'); });
-}, {threshold:.14});
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
-form.addEventListener('submit', (e)=>{
+window.addEventListener('scroll',()=>{
+  const max=document.documentElement.scrollHeight-window.innerHeight;
+  progress.style.width=(max>0?(window.scrollY/max)*100:0)+'%';
+},{passive:true});
+
+const calendarBtn=document.getElementById('calendarBtn');
+calendarBtn.addEventListener('click',()=>{
+  const ics=['BEGIN:VCALENDAR','VERSION:2.0','BEGIN:VEVENT','SUMMARY:Valentina y Sebastián — Boda','DTSTART:20270418T230000Z','DTEND:20270419T060000Z','LOCATION:Templo de San Agustín y Jardín Santa Lucía, Zacatecas','DESCRIPTION:Boda de Valentina y Sebastián','END:VEVENT','END:VCALENDAR'].join('\n');
+  const blob=new Blob([ics],{type:'text/calendar;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='valentina-sebastian.ics';a.click();URL.revokeObjectURL(url);
+});
+
+const form=document.getElementById('rsvpForm');
+const success=document.getElementById('success');
+form.addEventListener('submit',e=>{
   e.preventDefault();
-  const data = Object.fromEntries(new FormData(form).entries());
-  localStorage.setItem('valentina-sebastian-rsvp-demo', JSON.stringify(data));
-  form.style.display = 'none';
-  success.classList.add('show');
+  const data=Object.fromEntries(new FormData(form).entries());
+  localStorage.setItem('vs-editorial-rsvp',JSON.stringify(data));
+  form.style.display='none';success.classList.add('show');
 });
-
-if(localStorage.getItem('valentina-sebastian-rsvp-demo')){
-  form.style.display = 'none';
-  success.classList.add('show');
-}
-
-calendarBtn.addEventListener('click', ()=>{
-  const ics = [
-    'BEGIN:VCALENDAR',
-    'VERSION:2.0',
-    'BEGIN:VEVENT',
-    'SUMMARY:Valentina y Sebastián - Boda',
-    'DTSTART:20270418T230000Z',
-    'DTEND:20270419T060000Z',
-    'LOCATION:Templo de San Agustín / Jardín Santa Lucía, Zacatecas',
-    'DESCRIPTION:Ceremonia y recepción de Valentina y Sebastián',
-    'END:VEVENT',
-    'END:VCALENDAR'
-  ].join('\n');
-  const blob = new Blob([ics], {type:'text/calendar;charset=utf-8'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'valentina-sebastian.ics';
-  a.click();
-  URL.revokeObjectURL(url);
-});
+if(localStorage.getItem('vs-editorial-rsvp')){form.style.display='none';success.classList.add('show');}
