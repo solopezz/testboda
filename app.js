@@ -1,4 +1,30 @@
 const targetDate = new Date('2026-12-12T16:30:00-06:00').getTime();
+
+function createFallingHearts(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const layer = document.createElement('div');
+  layer.id = 'falling-hearts';
+  layer.setAttribute('aria-hidden','true');
+  const colors = ['#D8A7B1','#E6C5B8','#D4AF37','#8A9A86','#C9B7A5'];
+  const total = window.innerWidth < 640 ? 12 : 18;
+  for(let i=0;i<total;i++){
+    const heart = document.createElement('span');
+    heart.className = 'falling-heart';
+    heart.textContent = '♥';
+    const drift = Math.round(Math.random()*70-35);
+    heart.style.left = `${Math.random()*100}%`;
+    heart.style.fontSize = `${10 + Math.random()*12}px`;
+    heart.style.color = colors[Math.floor(Math.random()*colors.length)];
+    heart.style.animationDuration = `${8 + Math.random()*8}s`;
+    heart.style.animationDelay = `${-Math.random()*14}s`;
+    heart.style.setProperty('--drift', `${drift}px`);
+    heart.style.setProperty('--drift-end', `${Math.round(-drift*.35)}px`);
+    layer.appendChild(heart);
+  }
+  document.body.appendChild(layer);
+}
+createFallingHearts();
+
 function updateCountdown(){
   let diff = Math.max(0, targetDate - Date.now());
   const d = Math.floor(diff / 86400000); diff %= 86400000;
@@ -10,7 +36,8 @@ function updateCountdown(){
   document.getElementById('minutes').textContent = String(m).padStart(2,'0');
   document.getElementById('seconds').textContent = String(s).padStart(2,'0');
 }
-updateCountdown(); setInterval(updateCountdown,1000);
+updateCountdown();
+setInterval(updateCountdown,1000);
 
 const observer = new IntersectionObserver(entries => entries.forEach(entry => {
   if(entry.isIntersecting) entry.target.classList.add('is-visible');
@@ -31,16 +58,22 @@ function syncCompanions(){
   companions.classList.toggle('opacity-50', count === 1);
   companionsHint.textContent = count === 1 ? 'No necesitas agregar acompañantes para 1 pase.' : `Agrega ${count-1} acompañante${count-1>1?'s':''}, un nombre por línea.`;
 }
-passes.addEventListener('change', syncCompanions); syncCompanions();
+passes.addEventListener('change', syncCompanions);
+syncCompanions();
 
 const toast = document.getElementById('toast');
 function showToast(text){
-  toast.textContent = text; toast.classList.remove('opacity-0','translate-y-3');
+  toast.textContent = text;
+  toast.classList.remove('opacity-0','translate-y-3');
   setTimeout(()=>toast.classList.add('opacity-0','translate-y-3'),1500);
 }
 document.querySelectorAll('.copy-btn').forEach(btn => btn.addEventListener('click', async () => {
-  try{ await navigator.clipboard.writeText(btn.dataset.copy); showToast('Copiado al portapapeles'); }
-  catch{ showToast('Selecciona y copia manualmente'); }
+  try{
+    await navigator.clipboard.writeText(btn.dataset.copy);
+    showToast('Copiado al portapapeles');
+  }catch{
+    showToast('Selecciona y copia manualmente');
+  }
 }));
 
 const form = document.getElementById('rsvpForm');
@@ -50,9 +83,11 @@ form.addEventListener('submit', e => {
   const data = Object.fromEntries(new FormData(form).entries());
   data.food = [...form.querySelectorAll('input[name="food"]:checked')].map(x=>x.value);
   localStorage.setItem('sofia-alejandro-rsvp-demo', JSON.stringify(data));
-  form.classList.add('hidden'); successState.classList.remove('hidden');
+  form.classList.add('hidden');
+  successState.classList.remove('hidden');
   successState.scrollIntoView({behavior:'smooth',block:'center'});
 });
 document.getElementById('editResponse').addEventListener('click', () => {
-  successState.classList.add('hidden'); form.classList.remove('hidden');
+  successState.classList.add('hidden');
+  form.classList.remove('hidden');
 });
