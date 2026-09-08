@@ -1,0 +1,1 @@
+Use raster assets for envelope and flowers; CSS only for layout/animation.
