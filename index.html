@@ -1,147 +1,267 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#f5efe7">
-<title>Valentina & Sebastián — Nos casamos</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=4">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f5efe6" />
+  <title>Valentina & Sebastián — Nos Casamos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=5">
 </head>
-<body class="lock">
-<div id="intro" aria-modal="true" role="dialog" aria-label="Abrir invitación">
-  <div class="intro-shell">
-    <div class="intro-eyebrow">Valentina & Sebastián</div>
-    <h2 class="intro-title">Una invitación hecha para celebrar el amor</h2>
-    <div class="envelope-stage">
-      <div class="envelope-shadow"></div>
-      <div class="envelope">
-        <div class="env-back"></div>
-        <div class="env-side-left"></div>
-        <div class="env-side-right"></div>
-        <div class="env-front"></div>
-        <div class="env-flap"></div>
-        <div class="seal-wrap">
-          <button class="seal-btn" id="openInvite" aria-label="Abrir invitación con el sello">V&S</button>
-          <div class="seal-hint">Toca el sello para abrir</div>
+<body class="locked">
+  <div id="intro" aria-modal="true" role="dialog" aria-label="Abrir invitación">
+    <div class="intro-box">
+      <div class="intro-kicker">Valentina & Sebastián</div>
+      <h2 class="intro-title">Una invitación para celebrar el amor</h2>
+      <div class="envelope-wrap">
+        <div class="envelope-shadow"></div>
+        <div class="envelope">
+          <div class="env-back"></div>
+          <div class="env-left"></div>
+          <div class="env-right"></div>
+          <div class="env-front"></div>
+          <div class="env-flap"></div>
+          <div class="seal-zone">
+            <button id="openInvite" class="seal-btn" aria-label="Abrir invitación">V&S</button>
+            <div class="seal-hint">Toca el sello para abrir</div>
+          </div>
         </div>
       </div>
-    </div>
-    <p class="intro-note">Con una apertura más limpia, elegante y sin carta visible</p>
-  </div>
-</div>
-<audio id="song" preload="none" loop src="https://cdn.pixabay.com/download/audio/2022/11/22/audio_0e6f2b1f48.mp3?filename=romantic-piano-126137.mp3"></audio>
-<div class="music-pill">
-  <button id="musicBtn" aria-label="Reproducir música">▶</button>
-  <div class="music-label">
-    <small>Nuestra canción</small>
-    <span>Always With You · instrumental romántica</span>
-  </div>
-</div>
-<header class="hero">
-  <div class="hero-inner">
-    <div class="eyebrow">Nos casamos · Zacatecas</div>
-    <h1>Valentina <span class="amp">y</span> Sebastián</h1>
-    <div class="hero-date serif">18 de abril de 2027</div>
-    <p class="hero-copy">Con la bendición de Dios y de nuestras familias, queremos invitarte a compartir con nosotros el inicio de una vida extraordinaria juntos.</p>
-    <div class="hero-actions">
-      <a href="#historia" class="btn">Ver invitación →</a>
-      <a href="#rsvp" class="btn btn-light">Confirmar asistencia</a>
+      <div class="intro-kicker" style="margin:0;color:#8a7561">Boda · 18 de abril de 2027</div>
     </div>
   </div>
-  <div class="scroll-cue">
-    <span>Descubre nuestra historia</span>
-    <div class="scroll-line"></div>
+
+  <audio id="song" preload="none" loop src="https://cdn.pixabay.com/download/audio/2023/02/15/audio_c4e6f9f31b.mp3?filename=romantic-piano-141545.mp3"></audio>
+
+  <div class="music-pill">
+    <button id="musicBtn" aria-label="Reproducir música">▶</button>
+    <div>
+      <small>Nuestra canción</small>
+      <span>Romantic Piano · instrumental</span>
+    </div>
   </div>
-</header>
-<main>
-  <section class="quote-band" id="historia">
-    <div class="wrap reveal">
-      <div class="quote-box card">
-        <blockquote>El comienzo de nuestro para siempre.</blockquote>
-        <p>Con la bendición de Dios y nuestras familias</p>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-pill">Nos casamos · Zacatecas</div>
+      <h1>Valentina <span class="and">y</span> Sebastián</h1>
+      <div class="hero-date serif">18 de abril de 2027</div>
+      <p class="hero-copy">Con la bendición de Dios y de nuestras familias, queremos compartir contigo el inicio de nuestra nueva historia. Tu presencia hará este día aún más especial.</p>
+      <div class="hero-actions">
+        <a href="#detalles" class="btn">Ver invitación</a>
+        <a href="#rsvp" class="btn alt">Confirmar asistencia</a>
       </div>
     </div>
-  </section>
-  <section class="section">
-    <div class="wrap center reveal">
-      <div class="kicker">Con amor</div>
-      <h2 class="title serif">Tenemos el honor de invitarte</h2>
-      <p class="subtitle">A celebrar el día más importante de nuestras vidas. Queremos compartir una tarde de fe, brindis, baile y momentos que recordaremos para siempre.</p>
-      <div class="family-grid">
-        <div class="family-card"><h3 class="serif">Padres de la novia</h3><p>Adriana López<br>Fernando Ruiz</p></div>
-        <div class="family-card"><h3 class="serif">Padres del novio</h3><p>Patricia Mendoza<br>Ricardo Torres</p></div>
+  </header>
+
+  <main>
+    <section class="quote-band" id="detalles">
+      <div class="container reveal">
+        <div class="card quote-card">
+          <blockquote>El comienzo de nuestro para siempre.</blockquote>
+          <p>Con amor y gratitud</p>
+        </div>
       </div>
-    </div>
-  </section>
-  <section class="date-band">
-    <div class="wrap reveal">
-      <div class="kicker" style="color:#eadfcd">Reserva la fecha</div>
-      <div class="date-number serif">18</div>
-      <div class="month">Abril · 2027</div>
-      <div class="count-grid" id="countdown">
-        <div class="count-box"><b id="days">000</b><span>Días</span></div>
-        <div class="count-box"><b id="hours">00</b><span>Horas</span></div>
-        <div class="count-box"><b id="minutes">00</b><span>Minutos</span></div>
-        <div class="count-box"><b id="seconds">00</b><span>Segundos</span></div>
+    </section>
+
+    <section class="section">
+      <div class="container center reveal">
+        <div class="eyebrow">Con nuestras familias</div>
+        <h2 class="title">Tenemos el honor de invitarte</h2>
+        <p class="subtitle">A una celebración íntima, elegante y llena de amor. Queremos compartir una tarde inolvidable contigo entre flores, música, brindis y momentos que guardaremos para siempre.</p>
+        <div class="family-grid">
+          <div class="card family-card">
+            <h3>Padres de la novia</h3>
+            <p>Adriana López<br>Fernando Ruiz</p>
+          </div>
+          <div class="card family-card">
+            <h3>Padres del novio</h3>
+            <p>Patricia Mendoza<br>Ricardo Torres</p>
+          </div>
+        </div>
       </div>
-      <div class="count-actions">
-        <button class="btn" id="calendarBtn" type="button">＋ Agregar al calendario</button>
-        <a href="#rsvp" class="btn btn-light">Confirmar asistencia</a>
+    </section>
+
+    <section class="date-band">
+      <div class="container reveal">
+        <div class="eyebrow" style="color:#f3e7d7">Reserva la fecha</div>
+        <div class="date-num">18</div>
+        <div class="date-month">Abril · 2027</div>
+        <div class="count-grid">
+          <div class="count-box"><b id="days">000</b><span>Días</span></div>
+          <div class="count-box"><b id="hours">00</b><span>Horas</span></div>
+          <div class="count-box"><b id="minutes">00</b><span>Minutos</span></div>
+          <div class="count-box"><b id="seconds">00</b><span>Segundos</span></div>
+        </div>
+        <div style="margin-top:28px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+          <button id="calendarBtn" class="btn" type="button">Agregar al calendario</button>
+          <a class="btn alt" href="#rsvp">Confirmar asistencia</a>
+        </div>
       </div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="wrap">
-      <div class="center reveal">
-        <div class="kicker">El gran día</div>
-        <h2 class="title serif">Ceremonia & celebración</h2>
-        <p class="subtitle">Dos escenarios, un mismo amor. Te esperamos puntual para disfrutar cada momento con nosotros.</p>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="center reveal">
+          <div class="eyebrow">El gran día</div>
+          <h2 class="title">Ceremonia & celebración</h2>
+          <p class="subtitle">Dos escenarios, un mismo amor. Te esperamos para acompañarnos desde el “sí” hasta el último baile.</p>
+        </div>
+        <div class="event-grid">
+          <article class="card event-card reveal">
+            <div class="event-image church"></div>
+            <div class="event-body">
+              <div class="event-tag">Ceremonia religiosa</div>
+              <h3>Templo de San Agustín</h3>
+              <div class="event-time">5:00 PM</div>
+              <p>Centro Histórico, Zacatecas, Zac.<br>Un momento lleno de fe, amor y bendición.</p>
+            </div>
+          </article>
+          <article class="card event-card reveal">
+            <div class="event-image party"></div>
+            <div class="event-body">
+              <div class="event-tag">Recepción</div>
+              <h3>Jardín Santa Lucía</h3>
+              <div class="event-time">7:00 PM</div>
+              <p>Camino a la Bufa 245, Zacatecas, Zac.<br>Cena, brindis, vals y una noche para celebrar juntos.</p>
+            </div>
+          </article>
+        </div>
       </div>
-      <div class="event-grid">
-        <article class="card event-card reveal"><div class="event-media event-church"></div><div class="event-body"><div class="event-type">✦ Ceremonia religiosa</div><h3 class="serif">Templo de San Agustín</h3><div class="event-time">5:00 PM</div><p>Centro Histórico, Zacatecas, Zac.<br>Un momento íntimo para comenzar nuestra historia frente a Dios.</p></div></article>
-        <article class="card event-card reveal"><div class="event-media event-party"></div><div class="event-body"><div class="event-type">✦ Recepción</div><h3 class="serif">Jardín Santa Lucía</h3><div class="event-time">7:00 PM</div><p>Camino a la Bufa 245, Zacatecas, Zac.<br>Cena, brindis, vals y una noche para celebrar el amor.</p></div></article>
+    </section>
+
+    <section class="section sponsors">
+      <div class="container center">
+        <div class="reveal">
+          <div class="eyebrow">Con cariño</div>
+          <h2 class="title">Padrinos</h2>
+          <p class="subtitle">Personas muy queridas que nos acompañan en este momento tan importante.</p>
+        </div>
+        <div class="sponsor-grid">
+          <div class="card sponsor-card reveal"><div class="sponsor-icon">🕯️</div><h4>Velación</h4><p>Mariela & José Luis</p></div>
+          <div class="card sponsor-card reveal"><div class="sponsor-icon">∞</div><h4>Lazo</h4><p>Daniela & Arturo</p></div>
+          <div class="card sponsor-card reveal"><div class="sponsor-icon">🪙</div><h4>Arras</h4><p>Fernanda & Miguel</p></div>
+          <div class="card sponsor-card reveal"><div class="sponsor-icon">💍</div><h4>Anillos</h4><p>Alejandra & Roberto</p></div>
+          <div class="card sponsor-card reveal"><div class="sponsor-icon">✝️</div><h4>Biblia y Rosario</h4><p>Sofía & Eduardo</p></div>
+        </div>
       </div>
-    </div>
-  </section>
-  <section class="section sponsors">
-    <div class="wrap center">
-      <div class="reveal"><div class="kicker">Con cariño</div><h2 class="title serif">Padrinos</h2><p class="subtitle">Personas especiales que forman parte de este capítulo tan importante.</p></div>
-      <div class="sponsor-grid">
-        <div class="card sponsor reveal"><div class="sponsor-emoji">🕯️</div><h4 class="serif">Velación</h4><p>Mariela & José Luis</p></div>
-        <div class="card sponsor reveal"><div class="sponsor-emoji">∞</div><h4 class="serif">Lazo</h4><p>Daniela & Arturo</p></div>
-        <div class="card sponsor reveal"><div class="sponsor-emoji">🪙</div><h4 class="serif">Arras</h4><p>Fernanda & Miguel</p></div>
-        <div class="card sponsor reveal"><div class="sponsor-emoji">💍</div><h4 class="serif">Anillos</h4><p>Alejandra & Roberto</p></div>
-        <div class="card sponsor reveal"><div class="sponsor-emoji">✝️</div><h4 class="serif">Biblia y Rosario</h4><p>Sofía & Eduardo</p></div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="center reveal">
+          <div class="eyebrow">Itinerario</div>
+          <h2 class="title">Agenda del evento</h2>
+        </div>
+        <div class="card timeline-card reveal">
+          <div class="timeline-item"><b>5:00 PM</b><strong>Ceremonia</strong><p>Comenzamos este día tan especial rodeados de amor y bendiciones.</p></div>
+          <div class="timeline-item"><b>6:30 PM</b><strong>Sesión de fotos</strong><p>Un momento para guardar recuerdos inolvidables.</p></div>
+          <div class="timeline-item"><b>7:00 PM</b><strong>Recepción</strong><p>Brindaremos y daremos inicio a la celebración.</p></div>
+          <div class="timeline-item"><b>8:00 PM</b><strong>Cena</strong><p>Compartiremos la mesa con quienes más queremos.</p></div>
+          <div class="timeline-item"><b>9:30 PM</b><strong>Vals y brindis</strong><p>Un instante simbólico que queremos vivir contigo.</p></div>
+          <div class="timeline-item"><b>10:00 PM</b><strong>Fiesta</strong><p>Baile, alegría y una noche para recordar.</p></div>
+        </div>
       </div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="wrap">
-      <div class="center reveal"><div class="kicker">Acompáñanos</div><h2 class="title serif">Itinerario</h2></div>
-      <div class="timeline card reveal" style="padding:28px 22px 28px 30px;margin-inline:auto;max-width:760px">
-        <div class="t-item"><h4>5:00 PM</h4><strong class="serif">Ceremonia</strong><p>Iniciamos este día rodeados de amor y bendiciones.</p></div>
-        <div class="t-item"><h4>6:30 PM</h4><strong class="serif">Sesión de fotos</strong><p>Un pequeño espacio para recuerdos inolvidables.</p></div>
-        <div class="t-item"><h4>7:00 PM</h4><strong class="serif">Recepción</strong><p>Comienza la celebración en el jardín.</p></div>
-        <div class="t-item"><h4>8:00 PM</h4><strong class="serif">Cena</strong><p>Compartiremos la mesa con las personas más especiales.</p></div>
-        <div class="t-item"><h4>9:30 PM</h4><strong class="serif">Brindis y vals</strong><p>Un momento simbólico que queremos vivir contigo.</p></div>
-        <div class="t-item"><h4>10:00 PM</h4><strong class="serif">Fiesta</strong><p>Baile, música y una noche para disfrutar juntos.</p></div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="two-grid">
+          <article class="card feature-card reveal">
+            <div class="eyebrow" style="justify-content:flex-start">Etiqueta</div>
+            <h3>Código de vestimenta</h3>
+            <p>Formal elegante. Sugerimos una paleta en beige, blanco, verde olivo y tonos pastel para acompañar la estética cálida y romántica del evento.</p>
+            <div class="palette">
+              <span class="dot" style="background:#f6f2ed"></span>
+              <span class="dot" style="background:#ddcab8"></span>
+              <span class="dot" style="background:#6b7a61"></span>
+              <span class="dot" style="background:#e7d1cd"></span>
+              <span class="dot" style="background:#dce6d7"></span>
+            </div>
+          </article>
+          <article class="card feature-card reveal">
+            <div class="eyebrow" style="justify-content:flex-start">Música</div>
+            <h3>Nuestra canción</h3>
+            <p>Una melodía suave para acompañar cada sección de la invitación y dar una atmósfera cálida y elegante.</p>
+            <div class="song-box">
+              <div class="song-cover"></div>
+              <div>
+                <strong>Romantic Piano</strong>
+                <span>Instrumental romántica</span>
+                <button id="inlinePlay" class="song-play" type="button">▶</button>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="wrap"><div class="two-col">
-      <article class="card feature reveal"><div class="kicker" style="justify-content:flex-start">Etiqueta</div><h3 class="serif">Código de vestimenta</h3><p class="subtitle" style="max-width:none;margin-left:0">Formal elegante. Te sugerimos una paleta en tonos tierra, verde olivo, beige y nude para mantener una atmósfera cálida y sofisticada.</p><div class="palette"><span class="swatch" style="background:#5b654c"></span><span class="swatch" style="background:#aeb3a2"></span><span class="swatch" style="background:#d8c4ac"></span><span class="swatch" style="background:#d9b9af"></span><span class="swatch" style="background:#efe2d3"></span></div><div class="floral">❀</div></article>
-      <article class="card feature reveal"><div class="kicker" style="justify-content:flex-start">Música</div><h3 class="serif">Nuestra canción</h3><div class="note-card"><div class="album"></div><div class="song-meta" style="flex:1;min-width:0"><strong class="serif">Always With You</strong><span>Instrumental romántica</span><div class="inline-controls"><button class="inline-play" id="inlinePlay" type="button">▶</button><div class="wave"></div></div></div></div></article>
-    </div></div>
-  </section>
-  <section class="map-section"><div class="map-grid"><div class="map-copy reveal"><div class="map-tag">Ubicación</div><h2 class="serif">Jardín Santa Lucía</h2><p>Camino a la Bufa 245, Zacatecas, Zac. Un espacio elegante para brindar, cenar y celebrar juntos una noche inolvidable.</p><div style="display:flex;gap:14px;flex-wrap:wrap"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Jard%C3%ADn+Santa+Luc%C3%ADa+Camino+a+la+Bufa+245+Zacatecas">Cómo llegar →</a></div></div><div class="map-frame reveal"><iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Jard%C3%ADn%20Santa%20Luc%C3%ADa%20Camino%20a%20la%20Bufa%20245%20Zacatecas&output=embed"></iframe></div></div></section>
-  <section class="rsvp" id="rsvp"><div class="wrap center"><div class="reveal"><div class="kicker" style="color:#e0c89f">Nos encantará celebrar contigo</div><h2 class="title serif">Confirma tu asistencia</h2><p class="subtitle" style="color:rgba(247,241,232,.78)">Agradecemos confirmar antes del 20 de marzo de 2027.</p></div><div class="card rsvp-card reveal"><form id="rsvpForm" class="form-grid"><div class="field"><label>Nombre completo</label><input name="name" placeholder="Ej. Andrea Ramírez" required></div><div class="field"><label>¿Nos acompañas?</label><select name="attending" required><option value="">Selecciona una opción</option><option>Sí, con mucho gusto</option><option>No podré acompañarlos</option></select></div><div class="field"><label>Número de asistentes</label><select name="guests"><option>1</option><option>2</option><option>3</option><option>4</option></select></div><div class="field"><label>Teléfono o correo</label><input name="contact" placeholder="Opcional"></div><div class="field"><label>Mensaje para los novios</label><textarea name="message" placeholder="Escribe algo bonito..."></textarea></div><div style="grid-column:1/-1;text-align:center;margin-top:6px"><button class="btn" type="submit">Confirmar asistencia ♥</button><p style="margin:14px 0 0;font-size:12px;color:rgba(247,241,232,.6)">Demo visual: la confirmación se guarda solo en este dispositivo.</p></div></form><div class="success" id="success"><div class="check">✓</div><h3 class="serif" style="font-size:36px;margin:0 0 10px">¡Gracias por confirmar!</h3><p style="margin:0;color:rgba(247,241,232,.78)">Tu respuesta quedó guardada localmente como prueba visual.</p></div></div></div></section>
-  <section class="section"><div class="wrap"><div class="center reveal"><div class="kicker">Detalles finales</div><h2 class="title serif">Mesa de regalos</h2><p class="subtitle">Tu presencia es nuestro mejor regalo, pero si deseas tener un detalle con nosotros, agradecemos de corazón una lluvia de sobres.</p></div><div class="gift-grid"><div class="envelope-box card reveal"><div class="envelope-mini"></div></div><div class="card feature reveal" style="min-height:250px;display:flex;flex-direction:column;justify-content:center"><h3 class="serif">Gracias por acompañarnos</h3><p class="subtitle" style="max-width:none;margin-left:0">Nos ilusiona compartir este capítulo con las personas que más queremos. Será un honor celebrar contigo el inicio de nuestra nueva vida juntos.</p></div></div></div></section>
-</main>
-<footer><div class="mark serif">V & S</div><p>Dos almas · un mismo destino · 18 · 04 · 2027</p></footer>
-<script src="app.js?v=4"></script>
+    </section>
+
+    <section class="map-section">
+      <div class="map-grid">
+        <div class="map-copy reveal">
+          <div class="eyebrow" style="justify-content:flex-start">Ubicación</div>
+          <h2>Jardín Santa Lucía</h2>
+          <p>Camino a la Bufa 245, Zacatecas, Zac. Un lugar perfecto para una recepción elegante, acogedora y llena de magia.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Jard%C3%ADn+Santa+Luc%C3%ADa+Camino+a+la+Bufa+245+Zacatecas">Cómo llegar</a>
+          </div>
+        </div>
+        <div class="map-frame reveal">
+          <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Jard%C3%ADn%20Santa%20Luc%C3%ADa%20Camino%20a%20la%20Bufa%20245%20Zacatecas&output=embed"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="rsvp" id="rsvp">
+      <div class="container center">
+        <div class="reveal">
+          <div class="eyebrow" style="color:#eadcc8">Celebra con nosotros</div>
+          <h2 class="title">Confirma tu asistencia</h2>
+          <p class="subtitle">Agradecemos confirmar antes del 20 de marzo de 2027.</p>
+        </div>
+        <div class="card rsvp-card reveal">
+          <form id="rsvpForm" class="form-grid">
+            <div class="field"><label>Nombre completo</label><input name="name" required placeholder="Ej. Andrea Ramírez"></div>
+            <div class="field"><label>¿Nos acompañas?</label><select name="attending" required><option value="">Selecciona una opción</option><option>Sí, con gusto</option><option>No podré asistir</option></select></div>
+            <div class="field"><label>Número de asistentes</label><select name="guests"><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
+            <div class="field"><label>Teléfono o correo</label><input name="contact" placeholder="Opcional"></div>
+            <div class="field"><label>Mensaje para los novios</label><textarea name="message" placeholder="Escribe aquí un mensaje bonito..."></textarea></div>
+            <div style="grid-column:1/-1;text-align:center;margin-top:6px">
+              <button class="btn" type="submit">Confirmar asistencia</button>
+              <p style="margin:14px 0 0;font-size:12px;color:rgba(248,242,233,.65)">Demo visual: el formulario se guarda localmente en este dispositivo.</p>
+            </div>
+          </form>
+          <div id="rsvpSuccess" class="success">
+            <h3 class="serif" style="margin:0 0 8px;font-size:38px">¡Gracias por confirmar!</h3>
+            <p style="margin:0;color:rgba(248,242,233,.78)">Tu respuesta se guardó correctamente como prueba.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container center reveal">
+        <div class="eyebrow">Mesa de regalos</div>
+        <h2 class="title">Tu presencia es nuestro mejor regalo</h2>
+        <p class="subtitle">Si deseas tener un detalle con nosotros, con mucho cariño agradecemos una lluvia de sobres.</p>
+        <div class="gift-grid">
+          <div class="card gift-card reveal" style="display:grid;place-items:center"><div class="mini-envelope"></div></div>
+          <div class="card gift-card reveal" style="display:flex;flex-direction:column;justify-content:center;text-align:left">
+            <h3 class="serif" style="margin:0 0 10px;font-size:38px">Gracias por acompañarnos</h3>
+            <p style="margin:0;color:var(--muted);line-height:1.85">Nos hace muchísima ilusión celebrar este día con las personas que más queremos. Gracias por formar parte de nuestra historia y por compartir este comienzo con nosotros.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="mono">V & S</div>
+    <p>Dos almas · un mismo destino · 18 · 04 · 2027</p>
+  </footer>
+
+  <script src="app.js?v=5"></script>
 </body>
 </html>
