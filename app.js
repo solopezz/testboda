@@ -1,0 +1,95 @@
+const body = document.body;
+const intro = document.getElementById('intro');
+const openInvite = document.getElementById('openInvite');
+const song = document.getElementById('song');
+const musicBtn = document.getElementById('musicBtn');
+const inlinePlay = document.getElementById('inlinePlay');
+let playing = false;
+
+function setMusic(on){
+  playing = on;
+  if(on){
+    song.play().catch(()=>{ playing = false; updatePlayButtons(); });
+  } else {
+    song.pause();
+  }
+  updatePlayButtons();
+}
+
+function updatePlayButtons(){
+  musicBtn.textContent = playing ? '❚❚' : '▶';
+  inlinePlay.textContent = playing ? '❚❚' : '▶';
+}
+
+musicBtn.addEventListener('click', ()=>setMusic(!playing));
+inlinePlay.addEventListener('click', ()=>setMusic(!playing));
+
+openInvite.addEventListener('click', ()=>{
+  intro.classList.add('opening');
+  setMusic(true);
+  setTimeout(()=>{
+    intro.classList.add('opened');
+    body.classList.remove('lock');
+  }, 950);
+});
+
+const target = new Date('2027-04-18T17:00:00-06:00').getTime();
+function tick(){
+  let diff = Math.max(0, target - Date.now());
+  const days = Math.floor(diff / 86400000); diff %= 86400000;
+  const hours = Math.floor(diff / 3600000); diff %= 3600000;
+  const minutes = Math.floor(diff / 60000); diff %= 60000;
+  const seconds = Math.floor(diff / 1000);
+  document.getElementById('days').textContent = String(days).padStart(3,'0');
+  document.getElementById('hours').textContent = String(hours).padStart(2,'0');
+  document.getElementById('minutes').textContent = String(minutes).padStart(2,'0');
+  document.getElementById('seconds').textContent = String(seconds).padStart(2,'0');
+}
+tick();
+setInterval(tick, 1000);
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) entry.target.classList.add('in');
+  });
+}, {threshold:.14});
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+const form = document.getElementById('rsvpForm');
+const success = document.getElementById('success');
+form.addEventListener('submit', (e)=>{
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(form).entries());
+  localStorage.setItem('vs-demo-rsvp', JSON.stringify(data));
+  form.style.display = 'none';
+  success.classList.add('show');
+});
+
+const saved = localStorage.getItem('vs-demo-rsvp');
+if(saved){
+  form.style.display = 'none';
+  success.classList.add('show');
+}
+
+const calendarBtn = document.getElementById('calendarBtn');
+calendarBtn.addEventListener('click', ()=>{
+  const ics = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'BEGIN:VEVENT',
+    'SUMMARY:Valentina y Sebastián - Boda',
+    'DTSTART:20270418T230000Z',
+    'DTEND:20270419T060000Z',
+    'LOCATION:Templo de San Agustín / Jardín Santa Lucía, Zacatecas',
+    'DESCRIPTION:Ceremonia y recepción de Valentina y Sebastián',
+    'END:VEVENT',
+    'END:VCALENDAR'
+  ].join('\\n');
+  const blob = new Blob([ics], {type:'text/calendar;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'valentina-sebastian.ics';
+  a.click();
+  URL.revokeObjectURL(url);
+});
