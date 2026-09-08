@@ -3,202 +3,100 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f4f2eb">
-<title>Fase 1 · Invitación Lizbeth & Salvador</title>
+<meta name="theme-color" content="#f4f1e9">
+<title>Fase 1 · Lizbeth & Salvador</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@500;600&family=Parisienne&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#f3f2ec;
-  --paper2:#ecece6;
-  --olive:#7f846d;
-  --olive-dark:#5f6552;
-  --olive-deep:#4f5544;
-  --gold:#caa05a;
-  --gold-hi:#e0bd76;
-  --ink:#191a18;
+  --paper:#f4f1e9;
+  --ink:#20231f;
+  --olive:#64705a;
+  --olive-dark:#4e5947;
+  --gold:#b98a3d;
+  --texture:url('https://images.pexels.com/photos/7233124/pexels-photo-7233124.jpeg?auto=compress&cs=tinysrgb&w=1200');
 }
 *{box-sizing:border-box}
-html,body{margin:0;min-height:100%;background:#deded8}
-body{font-family:Montserrat,Arial,sans-serif;overflow:hidden}
-.stage{
-  position:relative;
-  min-height:100svh;
-  display:grid;
-  place-items:center;
-  overflow:hidden;
-  background:
-    radial-gradient(circle at 50% 12%,rgba(255,255,255,.78),transparent 31%),
-    linear-gradient(180deg,var(--paper),var(--paper2));
-}
-.stage:before{
-  content:"";position:absolute;inset:0;pointer-events:none;opacity:.25;mix-blend-mode:multiply;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.09'/%3E%3C/svg%3E");
-}
+html,body{margin:0;min-height:100%;background:#dedbd2}
+body{font-family:Montserrat,Arial,sans-serif;overflow:hidden;color:var(--ink)}
+.stage{min-height:100svh;display:grid;place-items:center;background:#d9d6ce;overflow:hidden}
 .card{
-  position:relative;z-index:2;
-  width:min(100vw,430px);
-  height:100svh;min-height:690px;
-  display:flex;flex-direction:column;align-items:center;
-  padding:0 24px;
-  text-align:center;
-  color:var(--ink);
-  background:rgba(248,247,242,.42);
-  overflow:hidden;
-  transition:opacity .45s ease,filter .45s ease;
-}
-.botanical{position:absolute;pointer-events:none;opacity:.92;filter:drop-shadow(0 4px 9px rgba(79,85,68,.08))}
-.botanical.top{left:-46px;top:-44px;width:245px;transform:rotate(-5deg)}
-.botanical.bottom{right:-64px;bottom:-52px;width:250px;transform:rotate(175deg)}
-.botanical svg{display:block;width:100%;height:auto}
-.heading{position:relative;z-index:3;margin-top:16.5svh}
-.kicker{font:600 14px/1.2 'Cormorant Garamond',serif;letter-spacing:.14em;text-transform:uppercase}
-.names{margin-top:19px;font:400 clamp(43px,12vw,59px)/.86 'Parisienne',cursive;color:#111}
-.names .amp{display:inline-block;margin:0 8px;color:#a5a28f;font:500 .6em 'Cormorant Garamond',serif;transform:translateY(-4px)}
-.date{margin-top:22px;font:600 14px/1.2 'Cormorant Garamond',serif;letter-spacing:.12em;text-transform:uppercase}
-.envelope-wrap{position:relative;z-index:5;margin-top:33px;width:min(78vw,318px);height:188px;perspective:900px}
-.envelope{
-  position:absolute;inset:0;
-  cursor:pointer;
-  transform-origin:50% 53%;
-  transition:transform .78s cubic-bezier(.22,.7,.14,1),filter .55s ease,opacity .55s ease;
-  filter:drop-shadow(0 16px 12px rgba(55,58,47,.20));
-}
-.env-back,.env-front,.env-left,.env-right,.env-flap{position:absolute;inset:0;border-radius:2px}
-.env-back{
-  background-color:#77806a;
-  background-image:
-    linear-gradient(180deg,rgba(255,255,255,.08),rgba(0,0,0,.05)),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
-  background-blend-mode:soft-light,multiply;
-}
-.env-left{
-  clip-path:polygon(0 0,51% 56%,0 100%);
+  position:relative;width:min(100vw,430px);height:100svh;min-height:720px;overflow:hidden;text-align:center;
   background:
-    linear-gradient(135deg,rgba(255,255,255,.08),rgba(56,62,47,.15)),
-    #77806a;
+    radial-gradient(circle at 50% 10%,rgba(255,255,255,.85),transparent 31%),
+    linear-gradient(180deg,#f8f6f0 0%,var(--paper) 100%);
+  box-shadow:0 0 65px rgba(39,43,37,.18);
+  transition:opacity .42s ease,filter .42s ease;
 }
-.env-right{
-  clip-path:polygon(100% 0,49% 56%,100% 100%);
-  background:
-    linear-gradient(225deg,rgba(255,255,255,.05),rgba(54,60,46,.22)),
-    #717a64;
-}
-.env-front{
-  clip-path:polygon(0 100%,0 66%,50% 42%,100% 66%,100% 100%);
-  background:
-    linear-gradient(180deg,rgba(255,255,255,.05),rgba(45,51,39,.10)),
-    #737b65;
-}
-.env-flap{
-  z-index:3;
-  clip-path:polygon(0 0,100% 0,50% 57%);
-  transform-origin:50% 0%;
-  background-color:#838b75;
-  background-image:
-    linear-gradient(158deg,rgba(255,255,255,.10),rgba(0,0,0,.08)),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.88' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
-  box-shadow:0 8px 10px rgba(41,46,35,.23);
-  transition:transform .34s cubic-bezier(.23,.8,.25,1),filter .35s ease;
-}
-.seal{
-  position:absolute;z-index:7;
-  left:50%;top:51%;transform:translate(-50%,-50%);
-  width:82px;height:82px;
-  display:grid;place-items:center;
-  color:#664719;
-  font:500 26px/1 'Parisienne',cursive;
-  border-radius:43% 57% 46% 54% / 53% 44% 56% 47%;
-  background:
-    radial-gradient(circle at 34% 29%,rgba(255,255,255,.30),transparent 24%),
-    radial-gradient(circle at 50% 48%,var(--gold-hi) 0 47%,#b98537 69%,#8d6429 100%);
-  box-shadow:0 7px 12px rgba(63,48,22,.28),inset 0 0 0 3px rgba(255,231,170,.21),inset 0 0 13px rgba(126,82,26,.30);
-  animation:sealPulse 1.85s cubic-bezier(.45,0,.55,1) infinite;
-  transform-origin:50% 50%;
-  transition:opacity .24s ease,filter .24s ease;
-}
-.seal:before{content:"";position:absolute;inset:12px;border-radius:50%;border:2px solid rgba(105,70,24,.36);box-shadow:inset 0 0 0 2px rgba(255,239,189,.13)}
-.seal span{position:relative;z-index:2;transform:translateY(1px)}
-@keyframes sealPulse{0%,100%{transform:translate(-50%,-50%) scale(.965)}50%{transform:translate(-50%,-50%) scale(1.075)}}
-.click-copy{position:relative;z-index:3;margin-top:23px;font:600 11px/1.45 'Cormorant Garamond',serif;letter-spacing:.16em;text-transform:uppercase}
-.passes{position:relative;z-index:3;margin-top:29px;font:600 11px/1.3 'Cormorant Garamond',serif;letter-spacing:.12em;text-transform:uppercase}
-.pass-number{width:58px;height:58px;margin:11px auto 8px;border:1.5px solid #8d9184;border-radius:13px;display:grid;place-items:center;background:rgba(255,255,255,.32);font:600 39px/1 'Cormorant Garamond',serif;letter-spacing:0}
+.card:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.12;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='170' height='170'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E")}
+.flowers{position:absolute;z-index:1;width:245px;pointer-events:none;user-select:none;filter:drop-shadow(0 5px 10px rgba(72,81,64,.10));opacity:.96}
+.flowers.top{top:-48px;left:-82px;transform:rotate(18deg)}
+.flowers.bottom{right:-78px;bottom:-72px;transform:rotate(198deg)}
+.content{position:relative;z-index:3;height:100%;display:flex;flex-direction:column;align-items:center;padding:0 22px}
+.heading{margin-top:15svh}
+.kicker{font:600 16px/1.2 'Cormorant Garamond',serif;letter-spacing:.15em;text-transform:uppercase}
+.names{margin-top:18px;font:400 clamp(42px,12vw,58px)/.9 'Parisienne',cursive;color:#171915}
+.names .amp{color:#afa98d;font:600 .52em 'Cormorant Garamond',serif;margin:0 8px;vertical-align:13%}
+.date{margin-top:21px;font:600 14px/1.2 'Cormorant Garamond',serif;letter-spacing:.14em;text-transform:uppercase}
+.envelope-wrap{position:relative;width:min(80vw,320px);height:198px;margin-top:31px;perspective:1200px;z-index:5}
+.envelope{position:absolute;inset:0;cursor:pointer;transform-origin:50% 56%;transition:transform .9s cubic-bezier(.18,.76,.18,1),filter .55s ease}
+.panel{position:absolute;inset:0;border-radius:2px;overflow:hidden;background-image:linear-gradient(rgba(82,96,74,.08),rgba(24,31,23,.15)),var(--texture);background-size:cover;background-position:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.07)}
+.back{filter:saturate(.48) brightness(.76) hue-rotate(10deg)}
+.left{clip-path:polygon(0 0,52% 57%,0 100%);filter:saturate(.48) brightness(.79) hue-rotate(10deg);box-shadow:10px 0 14px rgba(25,31,24,.18)}
+.right{clip-path:polygon(100% 0,48% 57%,100% 100%);filter:saturate(.48) brightness(.72) hue-rotate(10deg);box-shadow:-10px 0 14px rgba(25,31,24,.20)}
+.front{clip-path:polygon(0 100%,0 68%,50% 43%,100% 68%,100% 100%);filter:saturate(.50) brightness(.75) hue-rotate(10deg);box-shadow:0 -8px 12px rgba(25,31,24,.16)}
+.flap{z-index:4;clip-path:polygon(0 0,100% 0,50% 58%);transform-origin:50% 0%;filter:saturate(.50) brightness(.84) hue-rotate(10deg);box-shadow:0 13px 16px rgba(19,26,18,.24);transition:transform .48s cubic-bezier(.22,.72,.12,1),filter .35s ease}
+.envelope:after{content:"";position:absolute;inset:0;border-radius:2px;pointer-events:none;box-shadow:0 18px 24px rgba(42,49,38,.24)}
+.seal-wrap{position:absolute;left:50%;top:53%;z-index:9;width:92px;height:80px;transform:translate(-50%,-50%);animation:pulse 1.75s ease-in-out infinite;transition:opacity .24s ease,transform .28s ease,filter .28s ease}
+.seal-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:grayscale(1) sepia(1) saturate(2.4) hue-rotate(352deg) brightness(1.18) contrast(1.03) drop-shadow(0 8px 7px rgba(66,48,20,.28))}
+.seal-text{position:absolute;inset:0;display:grid;place-items:center;padding-top:2px;color:#6a4d20;font:600 22px/1 'Parisienne',cursive;text-shadow:0 1px rgba(255,238,178,.45)}
+@keyframes pulse{0%,100%{transform:translate(-50%,-50%) scale(.96)}50%{transform:translate(-50%,-50%) scale(1.08)}}
+.click-copy{margin-top:22px;font:600 11px/1.4 'Cormorant Garamond',serif;letter-spacing:.17em;text-transform:uppercase}
+.passes{margin-top:25px;font:600 11px/1.25 'Cormorant Garamond',serif;letter-spacing:.12em;text-transform:uppercase}
+.pass-number{width:59px;height:59px;margin:11px auto 8px;border:1.5px solid #92978c;border-radius:14px;background:rgba(255,255,255,.50);display:grid;place-items:center;font:600 40px/1 'Cormorant Garamond',serif;box-shadow:0 3px 8px rgba(62,67,57,.06)}
 .pass-sub{font-size:10px;letter-spacing:.14em}
-/* interaction */
-.envelope-wrap.opening .seal{animation:none;transform:translate(-50%,-50%) scale(1.26) rotate(7deg);opacity:0;filter:blur(1px)}
-.envelope-wrap.opening .env-flap{transform:rotateX(46deg) translateY(-2px);filter:brightness(1.06)}
-.envelope-wrap.zoom .envelope{transform:scale(6.4);filter:brightness(.78) blur(.6px)}
-.envelope-wrap.zoom .click-copy{opacity:0}
+.opening .seal-wrap{animation:none;transform:translate(-50%,-50%) scale(1.38) rotate(6deg);opacity:0;filter:blur(1px)}
+.opening .flap{transform:rotateX(-158deg);filter:saturate(.48) brightness(.92) hue-rotate(10deg)}
+.zoom .envelope{transform:translateY(3vh) scale(7.8);filter:brightness(.70) blur(.35px)}
+.zoom .click-copy,.zoom .passes,.zoom .heading,.zoom .flowers{opacity:0;transition:opacity .22s ease}
 .card.fade{opacity:0;filter:blur(2px)}
-.next{
-  position:absolute;inset:0;z-index:1;
-  display:grid;place-items:center;
-  background:linear-gradient(180deg,#f5f3ed,#ebe9e1);
-  color:#777b6f;
-  font:600 11px Montserrat,sans-serif;
-  letter-spacing:.18em;text-transform:uppercase;
-  opacity:0;transition:opacity .35s ease;
-}
-.next.show{opacity:1;z-index:8}
-@media(max-width:390px){
-  .heading{margin-top:14.5svh}
-  .envelope-wrap{margin-top:28px;width:min(79vw,305px);height:180px}
-  .seal{width:78px;height:78px}
-  .click-copy{margin-top:20px}.passes{margin-top:24px}
-}
-@media(max-height:720px){
-  .heading{margin-top:9svh}.names{font-size:43px}.date{margin-top:15px}.envelope-wrap{margin-top:21px;height:165px}.click-copy{margin-top:12px}.passes{margin-top:16px}.pass-number{width:50px;height:50px;font-size:34px}
-}
-@media(prefers-reduced-motion:reduce){.seal{animation:none}.envelope,.env-flap{transition:none}}
+.next{position:absolute;inset:0;display:grid;place-items:center;background:#f5f2eb;color:#7b8174;font:600 11px Montserrat,sans-serif;letter-spacing:.18em;text-transform:uppercase;opacity:0;transition:opacity .3s ease;z-index:0}.next.show{opacity:1;z-index:20}
+@media(max-width:390px){.heading{margin-top:13.5svh}.envelope-wrap{width:min(81vw,305px);height:188px}.flowers{width:225px}.seal-wrap{width:88px}.click-copy{margin-top:18px}.passes{margin-top:20px}}
+@media(max-height:730px){.heading{margin-top:8svh}.names{font-size:43px}.date{margin-top:14px}.envelope-wrap{margin-top:20px;height:174px}.click-copy{margin-top:12px}.passes{margin-top:13px}.pass-number{width:51px;height:51px;font-size:34px}}
+@media(prefers-reduced-motion:reduce){.seal-wrap{animation:none}.envelope,.flap{transition:none}}
 </style>
 </head>
 <body>
 <div class="stage">
   <div id="next" class="next">Página de inicio · próxima fase</div>
   <main id="card" class="card">
-    <div class="botanical top" aria-hidden="true">
-      <svg viewBox="0 0 260 250">
-        <g fill="none" stroke="#829477" stroke-width="4" stroke-linecap="round">
-          <path d="M12 211C73 160 94 101 176 26"/><path d="M40 183C45 153 31 131 25 118"/><path d="M62 165C87 151 104 132 112 111"/><path d="M90 137C104 101 119 82 141 62"/><path d="M120 103C151 90 168 64 181 39"/>
-        </g>
-        <g fill="#a9b79c" opacity=".92">
-          <ellipse cx="39" cy="154" rx="13" ry="27" transform="rotate(-34 39 154)"/><ellipse cx="72" cy="145" rx="13" ry="28" transform="rotate(37 72 145)"/><ellipse cx="96" cy="112" rx="12" ry="25" transform="rotate(-25 96 112)"/><ellipse cx="126" cy="87" rx="13" ry="27" transform="rotate(39 126 87)"/><ellipse cx="160" cy="56" rx="12" ry="24" transform="rotate(32 160 56)"/>
-        </g>
-        <g fill="#f7f5ee" stroke="#d6d8cd" stroke-width="1.5">
-          <circle cx="33" cy="75" r="30"/><circle cx="62" cy="55" r="27"/><circle cx="87" cy="75" r="28"/><circle cx="64" cy="88" r="30"/><circle cx="61" cy="73" r="17"/>
-          <circle cx="122" cy="37" r="25"/><circle cx="145" cy="28" r="23"/><circle cx="162" cy="48" r="25"/><circle cx="138" cy="58" r="24"/><circle cx="142" cy="43" r="14"/>
-        </g>
-        <g fill="#d7c9a3"><circle cx="61" cy="73" r="5"/><circle cx="142" cy="43" r="4"/></g>
-      </svg>
-    </div>
-    <div class="botanical bottom" aria-hidden="true">
-      <svg viewBox="0 0 260 250">
-        <g fill="none" stroke="#829477" stroke-width="4" stroke-linecap="round"><path d="M12 211C73 160 94 101 176 26"/><path d="M40 183C45 153 31 131 25 118"/><path d="M62 165C87 151 104 132 112 111"/><path d="M90 137C104 101 119 82 141 62"/><path d="M120 103C151 90 168 64 181 39"/></g>
-        <g fill="#a9b79c" opacity=".92"><ellipse cx="39" cy="154" rx="13" ry="27" transform="rotate(-34 39 154)"/><ellipse cx="72" cy="145" rx="13" ry="28" transform="rotate(37 72 145)"/><ellipse cx="96" cy="112" rx="12" ry="25" transform="rotate(-25 96 112)"/><ellipse cx="126" cy="87" rx="13" ry="27" transform="rotate(39 126 87)"/><ellipse cx="160" cy="56" rx="12" ry="24" transform="rotate(32 160 56)"/></g>
-        <g fill="#f7f5ee" stroke="#d6d8cd" stroke-width="1.5"><circle cx="33" cy="75" r="30"/><circle cx="62" cy="55" r="27"/><circle cx="87" cy="75" r="28"/><circle cx="64" cy="88" r="30"/><circle cx="61" cy="73" r="17"/><circle cx="122" cy="37" r="25"/><circle cx="145" cy="28" r="23"/><circle cx="162" cy="48" r="25"/><circle cx="138" cy="58" r="24"/><circle cx="142" cy="43" r="14"/></g>
-        <g fill="#d7c9a3"><circle cx="61" cy="73" r="5"/><circle cx="142" cy="43" r="4"/></g>
-      </svg>
-    </div>
+    <img class="flowers top" src="https://pngimg.com/uploads/white_roses/white_roses_PNG2800.png" alt="" aria-hidden="true">
+    <img class="flowers bottom" src="https://pngimg.com/uploads/white_roses/white_roses_PNG2800.png" alt="" aria-hidden="true">
+    <div class="content">
+      <header class="heading">
+        <div class="kicker">Nuestra boda</div>
+        <div class="names">Lizbeth <span class="amp">&</span> Salvador</div>
+        <div class="date">24 - Abril - 2027</div>
+      </header>
 
-    <section class="heading">
-      <div class="kicker">Nuestra boda</div>
-      <div class="names">Lizbeth <span class="amp">&amp;</span> Salvador</div>
-      <div class="date">24 - Abril - 2027</div>
-    </section>
-
-    <div id="envelopeWrap" class="envelope-wrap" role="button" tabindex="0" aria-label="Abrir invitación">
-      <div class="envelope">
-        <div class="env-back"></div>
-        <div class="env-left"></div>
-        <div class="env-right"></div>
-        <div class="env-front"></div>
-        <div class="env-flap"></div>
-        <div class="seal"><span>L&amp;S</span></div>
+      <div id="envelopeWrap" class="envelope-wrap" role="button" tabindex="0" aria-label="Abrir invitación">
+        <div class="envelope">
+          <div class="panel back"></div>
+          <div class="panel left"></div>
+          <div class="panel right"></div>
+          <div class="panel front"></div>
+          <div class="panel flap"></div>
+          <div class="seal-wrap">
+            <img class="seal-img" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Waxseal.png" alt="Sello de cera">
+            <span class="seal-text">L&amp;S</span>
+          </div>
+        </div>
       </div>
+
+      <div class="click-copy">Click para abrir la<br>invitación</div>
+      <div class="passes">Hemos reservado<div class="pass-number">2</div><div class="pass-sub">Lugares en su honor</div></div>
     </div>
-    <div class="click-copy">Click para abrir la<br>invitación</div>
-    <div class="passes">Hemos reservado<div class="pass-number">2</div><div class="pass-sub">Lugares en su honor</div></div>
   </main>
 </div>
 <script>
@@ -209,12 +107,12 @@ let busy=false;
 function openInvite(){
   if(busy)return;busy=true;
   wrap.classList.add('opening');
-  setTimeout(()=>wrap.classList.add('zoom'),260);
-  setTimeout(()=>card.classList.add('fade'),680);
-  setTimeout(()=>next.classList.add('show'),900);
+  setTimeout(()=>wrap.classList.add('zoom'),430);
+  setTimeout(()=>card.classList.add('fade'),1030);
+  setTimeout(()=>next.classList.add('show'),1280);
 }
 wrap.addEventListener('click',openInvite);
-wrap.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openInvite()}});
+wrap.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openInvite();}});
 </script>
 </body>
 </html>
