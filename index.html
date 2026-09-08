@@ -12,12 +12,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>tailwind.config={theme:{extend:{colors:{cream:'#FDFBF7',sage:'#8A9A86',gold:'#D4AF37',anthracite:'#2C3E50'},fontFamily:{serif:['Cormorant Garamond','serif'],sans:['Montserrat','sans-serif']},boxShadow:{soft:'0 22px 60px rgba(44,62,80,.10)'}}}}}</script>
-<link rel="stylesheet" href="custom.css?v=2">
+<link rel="stylesheet" href="custom.css?v=4">
 </head>
 <body class="font-sans antialiased">
 <div id="page"></div>
 <script>
-Promise.all(['section1.html?v=2','section2.html?v=2','section3.html?v=2'].map(url=>fetch(url).then(r=>{if(!r.ok)throw new Error(url);return r.text()}))).then(parts=>{document.getElementById('page').innerHTML=parts.join('');const s=document.createElement('script');s.src='app.js?v=2';document.body.appendChild(s)}).catch(()=>{document.getElementById('page').innerHTML='<main style="min-height:100vh;display:grid;place-items:center;padding:24px;font-family:Montserrat,sans-serif"><p>No fue posible cargar la invitación. Actualiza la página.</p></main>'});
+Promise.all(['section1.html?v=3','section2.html?v=3','section3.html?v=3'].map(url=>fetch(url).then(r=>{if(!r.ok)throw new Error(url);return r.text()}))).then(parts=>{document.getElementById('page').innerHTML=parts.join('');const s=document.createElement('script');s.src='app.js?v=4';document.body.appendChild(s)}).catch(()=>{document.getElementById('page').innerHTML='<main style="min-height:100vh;display:grid;place-items:center;padding:24px;font-family:Montserrat,sans-serif;color:#2C3E50;background:#FDFBF7"><p>No fue posible cargar la invitación. Actualiza la página.</p></main>'});
 </script>
 </body>
 </html>
