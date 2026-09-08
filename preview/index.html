@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#172a42">
+<title>Fase 1 · Pantalla inicial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Parisienne&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#172a42;--navy2:#203651;--text:#f6f2ec;--copper:#d98b56}*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#0e1723}body{font-family:Montserrat,Arial,sans-serif;overflow:hidden}.stage{min-height:100svh;display:grid;place-items:center;background:#101822}.invite{position:relative;width:min(100vw,430px);height:100svh;min-height:640px;overflow:hidden;background:linear-gradient(180deg,#1b304a 0%,#15273f 100%);color:var(--text);box-shadow:0 0 70px #0008;transition:opacity .55s ease,transform .55s ease}.invite:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.012) 0 1px,transparent 1px 4px);mix-blend-mode:soft-light;opacity:.55}.flap-top,.flap-left,.flap-right,.flap-bottom{position:absolute;inset:0;pointer-events:none}.flap-top{background:linear-gradient(155deg,rgba(255,255,255,.025),rgba(0,0,0,.08));clip-path:polygon(0 0,100% 0,50% 45%)}.flap-left{background:linear-gradient(135deg,rgba(255,255,255,.025),rgba(0,0,0,.08));clip-path:polygon(0 0,50% 45%,0 100%)}.flap-right{background:linear-gradient(225deg,rgba(255,255,255,.025),rgba(0,0,0,.08));clip-path:polygon(100% 0,50% 45%,100% 100%)}.flap-bottom{background:linear-gradient(180deg,rgba(255,255,255,.015),rgba(0,0,0,.12));clip-path:polygon(0 100%,50% 45%,100% 100%)}.content{position:relative;z-index:3;height:100%;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 32px}.copy{margin-top:23.5svh}.family{font:600 16px/1.2 'Cormorant Garamond',serif;letter-spacing:.01em}.names{margin-top:11px;font:400 31px/1 'Parisienne',cursive}.message{margin-top:14px;max-width:230px;font:400 15px/1.35 'Cormorant Garamond',serif}.seal{width:108px;height:108px;margin-top:31px;object-fit:contain;filter:drop-shadow(0 10px 10px rgba(0,0,0,.36))}.open{position:absolute;left:50%;bottom:max(58px,9svh);transform:translateX(-50%);width:194px;height:45px;border:1px solid rgba(255,255,255,.9);border-radius:999px;background:transparent;color:white;font:500 11px/1 Montserrat,sans-serif;letter-spacing:.04em;text-transform:uppercase}.open:active{transform:translateX(-50%) scale(.98)}.invite.leaving{opacity:0;transform:scale(1.015)}.next{position:absolute;inset:0;display:grid;place-items:center;background:#fff;color:#8b8b8b;text-align:center;padding:30px;font:500 11px Montserrat,sans-serif;letter-spacing:.18em;text-transform:uppercase;opacity:0;transition:opacity .3s ease}.next.show{opacity:1}@media(max-width:390px){.copy{margin-top:21svh}.seal{width:100px;height:100px}.open{bottom:7.5svh}}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div id="next" class="next">Portada · siguiente fase</div>
+  <main id="invite" class="invite" aria-label="Pantalla inicial de invitación">
+    <div class="flap-top"></div><div class="flap-left"></div><div class="flap-right"></div><div class="flap-bottom"></div>
+    <div class="content">
+      <div class="copy">
+        <div class="family">Familia Flores Fernández</div>
+        <div class="names">Lilia &amp; Beto</div>
+        <div class="message">Te invitan a celebrar con ellos este gran día.</div>
+        <img class="seal" src="https://capital.miwebdding.com/images/sello.png" alt="Sello de cera">
+      </div>
+      <button id="open" class="open" type="button">Ver invitación</button>
+    </div>
+  </main>
+</div>
+<script>
+const invite=document.getElementById('invite');const next=document.getElementById('next');document.getElementById('open').addEventListener('click',()=>{invite.classList.add('leaving');setTimeout(()=>{invite.style.display='none';next.classList.add('show')},520)});
+</script>
+</body>
+</html>
