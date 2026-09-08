@@ -1,34 +1,33 @@
 html{scroll-behavior:smooth}
-body{background:#FDFBF7;color:#2C3E50}
-.hero-bg{background-color:#2C3E50;background-image:linear-gradient(180deg,rgba(18,25,31,.22),rgba(18,25,31,.68)),url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=2000&q=88')}
-.ring-bg{background-color:#FDFBF7;background-image:linear-gradient(135deg,rgba(253,251,247,.94),rgba(253,251,247,.88)),url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=82')}
+body{background:#F7F2E8;color:#2F342B}
+.hero-bg{background-color:#2F342B;background-image:url('assets/hero.webp');background-position:center 42%}
+.hero-overlay{background:linear-gradient(180deg,rgba(24,29,20,.22) 0%,rgba(24,29,20,.12) 32%,rgba(24,29,20,.30) 55%,rgba(24,29,20,.82) 100%)}
+.ring-bg{background-color:#F7F2E8;background-image:linear-gradient(135deg,rgba(247,242,232,.95),rgba(238,231,217,.91)),url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=82')}
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
 .reveal.is-visible{opacity:1;transform:none}
-.glass{background:rgba(253,251,247,.92);backdrop-filter:blur(14px);color:#2C3E50}
-.gold-line{height:1px;background:linear-gradient(90deg,transparent,#D4AF37,transparent)}
-.field:focus{outline:none;border-color:#8A9A86;box-shadow:0 0 0 3px rgba(138,154,134,.15)}
-input[type="radio"],input[type="checkbox"]{accent-color:#8A9A86}
-
-/* Fallbacks de contraste para contenido inyectado por JS */
-.bg-anthracite{background-color:#2C3E50!important;color:#fff}
-.bg-cream{background-color:#FDFBF7!important;color:#2C3E50}
+.glass{background:rgba(255,253,248,.92);backdrop-filter:blur(14px);color:#2F342B}
+.gold-line{height:1px;background:linear-gradient(90deg,transparent,#B89A67,transparent)}
+.field:focus{outline:none;border-color:#566348;box-shadow:0 0 0 3px rgba(86,99,72,.14)}
+input[type="radio"],input[type="checkbox"]{accent-color:#566348}
+.bg-anthracite{background-color:#2F342B!important;color:#fff}
+.bg-oliveDark{background-color:#44513A!important;color:#fff}
+.bg-cream{background-color:#F7F2E8!important;color:#2F342B}
+.bg-paper{background-color:#FFFDF8!important}
 .bg-white{background-color:#fff!important}
-.bg-sage{background-color:#8A9A86!important}
-.text-anthracite{color:#2C3E50!important}
-.text-sage{color:#70806c!important}
-.text-gold{color:#b28e21!important}
+.bg-sage{background-color:#566348!important}
+.bg-rose{background-color:#D9ADA9!important}
+.bg-lav{background-color:#CFC5D5!important}
+.text-anthracite{color:#2F342B!important}
+.text-sage{color:#566348!important}
+.text-gold{color:#B89A67!important}
 .text-white{color:#fff!important}
-nav[class*="bg-anthracite"]{background-color:rgba(44,62,80,.94)!important;color:#fff!important}
+nav[class*="bg-oliveDark"]{background-color:rgba(68,81,58,.96)!important;color:#fff!important}
 .hero-bg.text-white,#dresscode.text-white,footer.text-white{color:#fff!important}
-.hero-bg [class*="text-white/"],#dresscode [class*="text-white/"],footer [class*="text-white/"],nav [class*="text-white/"]{color:rgba(255,255,255,.78)!important}
-.hero-bg .text-white{color:#fff!important}
-#dresscode{background-color:#2C3E50!important}
-footer.bg-anthracite{background-color:#2C3E50!important}
-section.bg-white,section.bg-cream,section[class*="bg-[#f"],article.bg-white,.glass{color:#2C3E50}
-
-/* Corazones cayendo */
+.hero-bg [class*="text-white/"],#dresscode [class*="text-white/"],footer [class*="text-white/"],nav [class*="text-white/"]{color:rgba(255,255,255,.80)!important}
+#dresscode{background-color:#44513A!important}
+footer.bg-oliveDark{background-color:#44513A!important}
 #falling-hearts{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:40;isolation:isolate}
-.falling-heart{position:absolute;top:-12vh;display:block;line-height:1;opacity:.32;filter:drop-shadow(0 2px 5px rgba(70,50,50,.08));animation:heartFall linear infinite;will-change:transform}
+.falling-heart{position:absolute;top:-12vh;display:block;line-height:1;opacity:.24;filter:drop-shadow(0 2px 5px rgba(70,50,50,.07));animation:heartFall linear infinite;will-change:transform}
 @keyframes heartFall{0%{transform:translate3d(0,-12vh,0) rotate(0deg)}50%{transform:translate3d(var(--drift),50vh,0) rotate(150deg)}100%{transform:translate3d(var(--drift-end),112vh,0) rotate(320deg)}}
-@media (max-width:640px){.falling-heart{opacity:.25}}
-@media (prefers-reduced-motion:reduce){.falling-heart{display:none}.reveal{opacity:1;transform:none;transition:none}}
+@media(max-width:640px){.falling-heart{opacity:.20}.hero-bg{background-position:center 44%}}
+@media(prefers-reduced-motion:reduce){.falling-heart{display:none}.reveal{opacity:1;transform:none;transition:none}}
