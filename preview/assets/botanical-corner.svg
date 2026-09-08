@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 620" role="img" aria-label="Rama botánica decorativa">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#aeb99b"/><stop offset="1" stop-color="#4e6251"/></linearGradient><filter id="w"><feTurbulence type="fractalNoise" baseFrequency=".03" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.6"/></filter></defs>
+<g filter="url(#w)"><path d="M20 590C112 492 136 357 208 270C267 198 334 147 492 28" fill="none" stroke="#667760" stroke-width="6" stroke-linecap="round" opacity=".78"/>
+<g fill="url(#g)" opacity=".92">
+<ellipse cx="72" cy="523" rx="22" ry="58" transform="rotate(42 72 523)"/><ellipse cx="105" cy="477" rx="20" ry="53" transform="rotate(33 105 477)"/>
+<ellipse cx="130" cy="426" rx="19" ry="51" transform="rotate(28 130 426)"/><ellipse cx="157" cy="373" rx="19" ry="48" transform="rotate(21 157 373)"/>
+<ellipse cx="187" cy="321" rx="18" ry="45" transform="rotate(17 187 321)"/><ellipse cx="226" cy="268" rx="17" ry="43" transform="rotate(10 226 268)"/>
+<ellipse cx="276" cy="220" rx="17" ry="43" transform="rotate(3 276 220)"/><ellipse cx="327" cy="176" rx="16" ry="41" transform="rotate(-8 327 176)"/>
+<ellipse cx="380" cy="133" rx="16" ry="39" transform="rotate(-17 380 133)"/><ellipse cx="432" cy="91" rx="15" ry="37" transform="rotate(-25 432 91)"/>
+<ellipse cx="129" cy="505" rx="18" ry="46" transform="rotate(86 129 505)"/><ellipse cx="173" cy="454" rx="17" ry="44" transform="rotate(79 173 454)"/>
+<ellipse cx="217" cy="399" rx="16" ry="42" transform="rotate(72 217 399)"/><ellipse cx="261" cy="343" rx="16" ry="39" transform="rotate(65 261 343)"/>
+<ellipse cx="313" cy="285" rx="15" ry="37" transform="rotate(58 313 285)"/><ellipse cx="365" cy="230" rx="15" ry="35" transform="rotate(49 365 230)"/>
+</g>
+<g fill="#f4efe2" stroke="#77836f" stroke-width="2"><circle cx="295" cy="169" r="20"/><circle cx="279" cy="158" r="15"/><circle cx="311" cy="158" r="15"/><circle cx="295" cy="150" r="6" fill="#c5b78e" stroke="none"/></g>
+</g></svg>
