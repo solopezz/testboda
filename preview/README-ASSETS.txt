@@ -1,0 +1,1 @@
+Visual realism phase: raster assets for envelope/flowers, CSS only for layout and motion.
